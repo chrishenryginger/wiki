@@ -1,3 +1,158 @@
-site_name: My Docs
+# Project Information
+site_name: Wiki
+site_url: https://chrishenryjohn.github.io/wiki/
+site_author: Chris
+
+# Repository
+repo_name: chrishenryjohn/wiki
+repo_url: https://github.com/chrishenryjohn/wiki
+edit_uri: edit/main/docs      # 编辑按钮跳转的链接
+
+# Copyright
+copyright: Copyright &copy; 2024 Chris
+
+# Configuration
 theme:
   name: material
+  custom_dir: overrides
+  language: zh
+
+  features:
+    # - header.autohide         # 自动隐藏顶部
+    # - navigation.instant      # 即时预览
+    - navigation.instant.prefetch # 预加载
+    - navigation.instant.progress # 进度条
+    - navigation.tracking     # 自动更新 URL中的活动锚点
+    - navigation.tabs         # 导航栏
+    # - navigation.tabs.sticky  # 锁定导航栏
+    # - navigation.sections     # 顶级分组列表固定展开
+    # - navigation.expand       # 左侧列表全部自动展开
+    - navigation.prune        # 导航修剪(列表折叠内容不渲染)
+    - navigation.indexes      # 章节索引页
+    - navigation.top          # 返回顶部按钮
+    - navigation.footer       # 页脚上下翻页
+    - search.suggest          # 搜索时显示可能的补全
+    - search.highlight        # 搜索关键字在文章中高亮显示
+    - search.share            # 搜索分享按钮
+    - toc.follow              # 锚点跟随
+    # - toc.integrate           # 将目录整合到左侧列表中
+    - content.tooltips        # 改进工具提示
+    - content.tabs.link       # 内容选项卡切换到相同的标签
+    - content.code.copy       # 代码复制按钮
+    - content.code.annotate   # 代码注释(加号)
+    - content.code.select     # 代码选择按钮
+    - content.action.edit     # 查看本页的源代码
+    - content.action.view     # 编辑此页
+
+
+  palette: 
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/theme-light-dark
+        name: 切换至浅色模式
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至深色模式
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: deep purple
+      toggle:
+        icon: material/weather-night
+        name: 切换至系统偏好
+  font:
+    text: Noto Sans SC
+    code: Fira Code
+  favicon: assets/images/feather-pointed-solid-color.svg
+  icon:
+    logo: fontawesome/solid/feather-pointed
+    repo: fontawesome/brands/github
+    edit: material/file-edit-outline
+    view: material/file-document-outline
+
+extra:
+  social:     # 底部链接
+    - icon: fontawesome/brands/github
+      link: https://github.com/chrishenryjohn
+      name: Github
+
+plugins:
+  - search
+  - tags:
+      tags_file: tags.md
+  - git-revision-date-localized:
+      type: iso_date
+      timezone: Asia/Shanghai
+      enable_creation_date: true
+      exclude:
+        - index.md
+
+markdown_extensions:
+  # Python Markdown
+  - abbr                      # 缩写
+  - admonition                # 标注警告框
+  - attr_list                 # 属性列表
+  - def_list                  # 定义列表
+  - footnotes                 # 脚注
+  - md_in_html                # 允许在 HTML中编写 Markdown
+  - toc:    # Table of Contents
+      permalink: true         # 在标题后面添加锚点链接
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:      # 数学符号渲染
+      generic: true
+  - pymdownx.betterem:        # 改进粗体斜体
+      smart_enable: all       # 智能模式
+  - pymdownx.caret            # 下划线
+  - pymdownx.mark             # 马克高亮
+  - pymdownx.tilde            # 删除线
+  - pymdownx.critic           # 批评标记
+  - pymdownx.details          # 使标注可折叠
+  # - pymdownx.emoji:           # 表情符号
+  #     emoji_index: !!python/name:material.extensions.emoji.twemoji 
+  #     emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      linenums: true          # 代码显示行号
+      anchor_linenums: true   # 代码行添加锚点链接
+      # auto_title: true        # 代码块显示编程语言作为标题
+      line_spans: __span      # 代码块一行在一个span里
+  - pymdownx.inlinehilite     # 内联代码块显示高亮
+  - pymdownx.keys             # 键盘按键
+  - pymdownx.smartsymbols     # 一些特殊符号
+  - pymdownx.snippets         # 允许将其他文件内容插入文件
+  - pymdownx.superfences      # 允许嵌套
+      # custom_fences:          # 启用 Mermaid.js 图表
+      #   - name: mermaid
+      #     class: mermaid
+      #     format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:          # 选项卡分组
+      alternate_style: true
+  - pymdownx.tasklist:        # 任务列表
+      custom_checkbox: true
+
+extra_javascript:
+  - assets/javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+# Page tree
+nav:
+  - 主页: index.md
+  - 算法: 
+    - algorithm/index.md
+  - 编程: 
+    - program/index.md
+  - 工具:
+    - tools/index.md
+    - Markdown:
+      - Markdown 基本语法: tools/markdown/markdown_basic.md
+      - Markdown 扩展语法: tools/markdown/markdown_extensions.md
+  - 标签: tags.md
