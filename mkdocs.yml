@@ -27,7 +27,7 @@ theme:
     # - navigation.tabs.sticky  # 锁定导航栏
     # - navigation.sections     # 顶级分组列表固定展开
     # - navigation.expand       # 左侧列表全部自动展开
-    - navigation.prune        # 导航修剪(列表折叠内容不渲染)
+    # - navigation.prune        # 导航修剪(列表折叠内容不渲染)
     - navigation.indexes      # 章节索引页
     - navigation.top          # 返回顶部按钮
     - navigation.footer       # 页脚上下翻页
@@ -75,12 +75,19 @@ theme:
     repo: fontawesome/brands/github
     edit: material/file-edit-outline
     view: material/file-document-outline
+    tag:
+      default: material/tag
+      linux: simple/windowsterminal
+      markdown: simple/markdown
 
 extra:
   social:     # 底部链接
     - icon: fontawesome/brands/github
       link: https://github.com/chrishenryjohn
       name: Github
+  tags:
+    Linux: linux
+    Markdown: markdown
 
 plugins:
   - search
@@ -92,6 +99,7 @@ plugins:
       enable_creation_date: true
       exclude:
         - index.md
+        - tags.md
 
 markdown_extensions:
   # Python Markdown
@@ -107,7 +115,7 @@ markdown_extensions:
   - pymdownx.arithmatex:      # 数学符号渲染
       generic: true
   - pymdownx.betterem:        # 改进粗体斜体
-      smart_enable: all       # 智能模式
+      # smart_enable: all       # 智能模式
   - pymdownx.caret            # 下划线
   - pymdownx.mark             # 马克高亮
   - pymdownx.tilde            # 删除线
@@ -152,6 +160,7 @@ nav:
     - program/index.md
   - 工具:
     - tools/index.md
+    - Git: tools/git.md
     - Markdown:
       - Markdown 基本语法: tools/markdown/markdown_basic.md
       - Markdown 扩展语法: tools/markdown/markdown_extensions.md

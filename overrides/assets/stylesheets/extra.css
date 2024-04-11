@@ -109,6 +109,11 @@
 }
 
 
+.md-typeset details:not([open])>summary {
+    /* border-radius: var(--md-admonition-radius); */
+    border-top-right-radius: var(--md-admonition-radius);
+    border-bottom-right-radius: var(--md-admonition-radius);
+}
 
 [dir=ltr] .md-typeset .admonition-title,
 [dir=ltr] .md-typeset summary,
