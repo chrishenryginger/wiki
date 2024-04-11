@@ -1,0 +1,199 @@
+:root>* {
+    --md-primary-fg-color: #ffffff;
+    --md-primary-bg-color: #1d1d20;
+
+    --md-default-fg-color: #1d1d20;
+    --md-default-bg-color: #ffffff;
+
+    --md-body-bg-color: #22272e;
+    --md-header-bg-color: rgba(255, 255, 255, 0.6);
+
+    --md-code-fg-color: #1d1d20;
+    --md-code-bg-color: #f5f5f5;
+
+    /* BOLINLAN */
+    --md-accent-fg-color: #126bae;
+
+    --md-admonition-fg-color: #1d1d20;
+
+    --md-typeset-color: #1d1d20;
+    --md-typeset-a-color: #126bae;
+
+    --md-typeset-btn-color: #126bae;
+    --md-typeset-btn-hover-color: #126bae;
+
+    --md-code-radius: 10px;
+    --md-admonition-radius: 6px;
+}
+
+[data-md-color-scheme="slate"] {
+    --md-primary-fg-color: #22272e;
+    --md-primary-bg-color: #adbac7;
+
+    --md-default-fg-color: #adbac7;
+    --md-default-bg-color: #22272e;
+
+    --md-body-bg-color: #22272e;
+    --md-header-bg-color: rgba(34, 39, 46, 0.8);
+
+    --md-code-fg-color: #adbac7;
+    --md-code-bg-color: #1d2126;
+
+    /* QINGLIAN */
+    --md-accent-fg-color: #8b2671;
+
+    --md-admonition-fg-color: #adbac7;
+
+    --md-footer-fg-color: #adbac7;
+
+    --md-typeset-color: #adbac7;
+    --md-typeset-a-color: #8b2671;
+
+    --md-typeset-btn-color: #8b2671;
+    --md-typeset-btn-hover-color: #8b2671;
+}
+
+[data-md-color-scheme="slate"][data-md-color-primary="black"],
+[data-md-color-scheme="slate"][data-md-color-primary="white"] {
+    --md-typeset-a-color: #8b2671;
+}
+
+
+/* Header */
+[data-md-color-primary="black"] .md-header {
+    background-color: var(--md-header-bg-color);
+}
+
+[data-md-color-primary="black"] .md-tabs {
+    background-color: transparent;
+}
+
+.md-header__button.md-logo svg {
+    fill: var(--md-typeset-a-color);
+}
+
+.md-header {
+    box-shadow: none;
+    transition: none;
+    /* Gaussian blur */
+    backdrop-filter: saturate(180%) blur(20px);
+    /* Safari */
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    background-color: var(--md-header-bg-color);
+}
+
+.md-tabs {
+    background-color: transparent;
+}
+
+
+/* Nav */
+.md-nav__link[for] {
+    color: var(--md-default-fg-color) !important;
+}
+
+
+/* Main */
+.md-main {
+    min-height: 100vh;
+}
+
+
+/* Admonitions */
+.md-typeset .admonition,
+.md-typeset details {
+    border-width: 0;
+    border-left-width: var(--md-admonition-radius);
+    border-radius: var(--md-admonition-radius);
+    border-color: #1e90ff;
+}
+
+
+.md-typeset details:not([open])>summary {
+    /* border-radius: var(--md-admonition-radius); */
+    border-top-right-radius: var(--md-admonition-radius);
+    border-bottom-right-radius: var(--md-admonition-radius);
+}
+
+[dir=ltr] .md-typeset .admonition-title,
+[dir=ltr] .md-typeset summary,
+[dir=rtl] .md-typeset .admonition-title,
+[dir=rtl] .md-typeset summary {
+    /* border-radius: 20px; */
+    border-top-right-radius: var(--md-admonition-radius);
+}
+
+
+/* Font size */
+.md-typeset {
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.md-typeset h1 {
+    font-weight: 400;
+    color: var(--md-default-fg-color);
+}
+
+.md-typeset h2 {
+    font-weight: 400;
+}
+
+.md-typeset h3 {
+    font-weight: 500;
+}
+
+.md-typeset h4 {
+    font-weight: 500;
+}
+
+.md-typeset h5 {
+    text-transform: none;
+    color: var(--md-typeset-color);
+}
+
+
+/* Hover */
+.md-typeset a:hover {
+    color: var(--md-typeset-a-color);
+    text-decoration: underline;
+}
+
+.md-typeset .md-button:hover,
+.md-typeset .md-tag:hover {
+    text-decoration: none;
+}
+
+.md-typeset .md-button {
+    border-radius: 25px;
+}
+
+
+/* Code Radius */
+.highlighttable .linenos {
+    border-bottom-left-radius: var(--md-code-radius);
+    border-top-left-radius: var(--md-code-radius);
+}
+
+.md-typeset code {
+    border-radius: var(--md-code-radius);
+}
+
+.highlighttable th.filename span.filename {
+    border-top-left-radius: var(--md-code-radius);
+    border-top-right-radius: var(--md-code-radius);
+}
+
+.highlighttable tr:nth-child(2) .linenos {
+    border-top-left-radius: 0;
+}
+
+.md-typeset .highlighttable tr:nth-child(2) .code code {
+    border-top-right-radius: 0;
+}
+
+
+/* max height of code block */
+/* .md-typeset pre>code {
+    max-height: 25rem;
+} */
