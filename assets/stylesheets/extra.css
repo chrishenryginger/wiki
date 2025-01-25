@@ -197,3 +197,8 @@
 /* .md-typeset pre>code {
     max-height: 25rem;
 } */
+
+
+.md-typeset table:not([class]) {
+    font-size: 0.7rem;
+}
