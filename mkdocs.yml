@@ -1,15 +1,15 @@
 # Project Information
 site_name: Wiki
-site_url: https://chrishenryjohn.github.io/wiki/
+site_url: https://chrishenryginger.github.io/wiki/
 site_author: Chris
 
 # Repository
-repo_name: chrishenryjohn/wiki
-repo_url: https://github.com/chrishenryjohn/wiki
+repo_name: chrishenryginger/wiki
+repo_url: https://github.com/chrishenryginger/wiki
 edit_uri: edit/main/docs      # 编辑按钮跳转的链接
 
 # Copyright
-copyright: Copyright &copy; 2024 Chris
+copyright: Copyright &copy; 2024~2025 Chris. All rights reserved.
 
 # Configuration
 theme:
@@ -25,7 +25,7 @@ theme:
     - navigation.tracking     # 自动更新 URL中的活动锚点
     - navigation.tabs         # 导航栏
     # - navigation.tabs.sticky  # 锁定导航栏
-    # - navigation.sections     # 顶级分组列表固定展开
+    - navigation.sections     # 顶级分组列表固定展开
     # - navigation.expand       # 左侧列表全部自动展开
     # - navigation.prune        # 导航修剪(列表折叠内容不渲染)
     - navigation.indexes      # 章节索引页
@@ -79,20 +79,31 @@ theme:
       default: material/tag
       linux: simple/windowsterminal
       markdown: simple/markdown
+      database: material/database
+      vscode: material/microsoft-visual-studio-code
 
 extra:
   social:     # 底部链接
     - icon: fontawesome/brands/github
-      link: https://github.com/chrishenryjohn
+      link: https://github.com/chrishenryginger
       name: Github
   tags:
     Linux: linux
     Markdown: markdown
+    Database: database
+    VS Code: vscode
 
 plugins:
   - search
   - tags:
       tags_file: tags.md
+  - add-number:
+      order: 2
+      excludes:
+        - index.md
+        - tags.md
+        - program/git.md
+        - program/markdown/
   - git-revision-date-localized:
       type: iso_date
       timezone: Asia/Shanghai
@@ -158,10 +169,13 @@ nav:
     - algorithm/index.md
   - 编程: 
     - program/index.md
+    - 开发工具:
+      - Git: program/git.md
+      - Markdown:
+        - Markdown 基本语法: program/markdown/markdown_basic.md
+        - Markdown 扩展语法: program/markdown/markdown_extensions.md
+      - Tmux: program/tmux.md
+      - VS Code: program/vscode.md
   - 工具:
-    - tools/index.md
-    - Git: tools/git.md
-    - Markdown:
-      - Markdown 基本语法: tools/markdown/markdown_basic.md
-      - Markdown 扩展语法: tools/markdown/markdown_extensions.md
+    - tool/index.md
   - 标签: tags.md
