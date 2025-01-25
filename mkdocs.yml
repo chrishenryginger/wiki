@@ -76,11 +76,11 @@ theme:
     edit: material/file-edit-outline
     view: material/file-document-outline
     tag:
-      default: material/tag
-      linux: simple/windowsterminal
-      markdown: simple/markdown
-      database: material/database
-      vscode: material/microsoft-visual-studio-code
+      default: tag
+      linux: windowsterminal
+      markdown: markdown
+      database: database
+      vscode: vscode
 
 extra:
   social:     # 底部链接
@@ -88,7 +88,7 @@ extra:
       link: https://github.com/chrishenryginger
       name: Github
   tags:
-    Linux: linux
+    # Linux: linux
     Markdown: markdown
     Database: database
     VS Code: vscode
